@@ -9,11 +9,34 @@ db.usuario.insertMany
         nombreUsuario:"",
         email:"",
         celular:"",
+        idioma:
+        [
+            "",
+            "",
+            "",
+            ""
+        ],
+
+        tipo_moneda:
+        [
+            "",
+            "",
+            "",
+        ],
+
         direcciones :
             [
                 {
-                    pais:"",
+                    pais:
+                    [
+                        "",
+                        "",
+                        "",
+                        "",
+                    ],
+
                     ciudad:"",
+                    codigo_postal:"",
                     indicaciones:"",
                 },
                                 {
@@ -79,6 +102,7 @@ db.productos.insertMany
         detalles_producto:"",
         tienda:"",
         precio: 0.00,
+        modelo:"",
         categoria: 
             [
                 {
@@ -119,12 +143,40 @@ db.productos.insertMany
     }
 ])
 
+
+// COLECCION DE PEDIDOS
 db.pedido.insertMany
 ([
     
     {
-        peido_id:"",
+        pedido_id:"",
         usuario_id:"",
+        metodo_pago:"",
+        estado:"",
+        fecha_orden:"",
+        direccion_destino:
+            {
+                pais:"",
+                ciudad:"",
+                codigo_postal:"",
+                indicaciones:""
+
+            },
+        productos:
+            [
+                {
+                    producto_id:"",
+                    nombre:"",
+                    precio_unitario:0.00,
+                    cantidad:0
+                }
+
+            ],
+        
+            total:0.00
+
         
     }
 ])
+
+//COLECCION DE PUBLICIDAD
