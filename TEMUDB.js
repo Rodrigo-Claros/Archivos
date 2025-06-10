@@ -38,6 +38,7 @@ db.usuario.insertMany
                     ciudad:"",
                     codigo_postal:"",
                     indicaciones:"",
+                    principal: true
                 },
                                 {
                     pais:"",
@@ -66,7 +67,7 @@ db.usuario.insertMany
                 }
             ],
 
-        pedidos:
+        pedidos: //Aquise supone que se tiene que hacer una tipo referencia al objeto u ID de el documento Pedidos
             [
                 {
                     estado:"",
@@ -85,11 +86,24 @@ db.usuario.insertMany
             "",
             "",
 
-        ]
+        ],
+
+        carrito:
+            [ 
+                {
+                    producto_id : ObjectId(""),
+                    cantidad: 2,
+                    fecha_agregado: ISODate(""),
+                }    
+          ]   
         
     },
 
 ])
+
+
+
+
 
 
 //COLECCION DE PRODUCTOS
@@ -99,10 +113,24 @@ db.productos.insertMany
         _id:"p001",
         nombre:"",
         descripcion:"",
-        detalles_producto:"",
+        detalles_producto:
+            {
+                color:
+                    [
+                     "",
+                     "",
+                     ""   
+                    ],
+                    bateria:"",
+                    conectividad:"",
+                    modelo:"",
+
+            },
         tienda:"",
         precio: 0.00,
-        modelo:"",
+        precio_original:0.00,
+        descuento:40,
+        fecha_publicacion: ISODate(""),
         categoria: 
             [
                 {
@@ -137,7 +165,15 @@ db.productos.insertMany
                 comentario : "",
                 fecha_calificacion:""
             }
-        ]
+        ],
+        valoracion:"",
+        tags:
+            [
+                "",
+                "",
+                "",
+
+            ]
         
             
     }
